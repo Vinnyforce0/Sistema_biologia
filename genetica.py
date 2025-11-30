@@ -17,9 +17,7 @@ def abrir_pergunta_genetica():
     tk.Label(janela, text=explicacao, font=("Arial", 11)).pack(pady=5)
 
     # --- PERGUNTA DO DESAFIO ---
-    cruzamento = "Aa x Aa"   # Você pode trocar depois se quiser
-    resposta_correta = "3:1"  # Resultado de Aa x Aa
-
+    cruzamento = "Aa x aa"
     tk.Label(janela, text=f"Cruzamento: {cruzamento}", font=("Arial", 14)).pack(pady=10)
 
     tk.Label(janela, text="Qual a proporção fenotípica esperada?").pack()
@@ -30,12 +28,29 @@ def abrir_pergunta_genetica():
     def verificar():
         resposta = entrada.get().strip().replace(" ", "")
 
-        if resposta == resposta_correta.replace(" ", ""):
-            janela.destroy()
-            messagebox.showinfo("Resultado", "3 _ _ _")
-        else:
-            messagebox.showerror("Resultado", f"❌ Resposta incorreta.\n"
-                                              f"O correto é: {resposta_correta}")
+        # Verifica se está no formato correto X:X
+        if ":" in resposta:
+            partes = resposta.split(":")
+
+            # Verifica se os dois lados são números
+            if len(partes) == 2 and partes[0].isdigit() and partes[1].isdigit():
+
+                a = int(partes[0])
+                b = int(partes[1])
+
+                # Se os números forem iguais → está correto
+                if a == b:
+                    janela.destroy()
+                    messagebox.showinfo("Resultado", "3 _ _ _")
+                    return
+
+        # Se chegou aqui → incorreta
+        messagebox.showerror(
+            "Resultado",
+            f"❌ Resposta incorreta.\n"
+            f"A resposta correta é do tipo X:X\n(ex: 1:1, 2:2, 3:3...)"
+        )
+
 
     tk.Button(
         janela, 
@@ -43,5 +58,4 @@ def abrir_pergunta_genetica():
         font=("Arial", 12), 
         command=verificar
     ).pack(pady=15)
-
     tk.Label(janela, text="Dica: considere dominância completa.", font=("Arial", 10, "italic")).pack(pady=5)

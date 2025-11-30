@@ -82,6 +82,7 @@ senha_entry = ttk.Entry(
     font=("Segoe UI", 18),
     show="*"
 )
+senha_entry.focus()
 
 senha_box = canvas.create_window(
     x_center,

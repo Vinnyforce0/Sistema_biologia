@@ -37,6 +37,7 @@ def abrir():
     canvas.tag_bind(exetext, "<Button-1>", lambda e: abrir_filho())
     
     def abrir_filho():
+        global filho
         filho = tk.Toplevel(root)
         filho.title("Senha_cofre.exe")
         filho.geometry("300x200")
@@ -51,16 +52,21 @@ def abrir():
         texto = tk.StringVar()
         entrada = tk.Entry(filho, width=30, textvariable=texto)
         entrada.pack(pady=5)
+        entrada.focus()
         button = tk.Button(filho, command=pergunta, text="Enter").pack(pady=5)
 
     def pergunta():
         if(texto.get() == "eu te amo"):
+            filho.destroy()
             genetica.abrir_pergunta_genetica()
         if(texto.get() == "voce me ama"):
+            filho.destroy()
             desafio_genetico.abrir_desafio_genetico()
         if(texto.get() == "nao amo"):
+            filho.destroy()
             punnett.abrir_desafio_punnett()
         if(texto.get() == "amo"):
+            filho.destroy()
             mendel_desafio.abrir_desafio_mendel()
         
     canvas.create_image(70, 190, image=trash)

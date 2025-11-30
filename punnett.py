@@ -44,7 +44,7 @@ def abrir_desafio_punnett():
     # Proporção fenotípica esperada para Aa × Aa (dominância completa):
     proporcao_correta = "3:1"
 
-    tk.Label(janela, text="Qual é a proporção fenotípica esperada?", font=("Arial", 12)).pack()
+    tk.Label(janela, text="Qual é a proporção fenotípica esperada? (3:1, 1:2:1, etc...)", font=("Arial", 12)).pack()
 
     entrada = tk.Entry(janela, font=("Arial", 12), width=10)
     entrada.pack(pady=5)
