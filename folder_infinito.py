@@ -22,6 +22,7 @@ def criar_area_de_trabalho():
     root.title("Lixeira")
     root.geometry("900x525")
     root.resizable(False, False)
+    
 
     canvas = tk.Canvas(root, width=900, height=525, highlightthickness=0, bg="#a0a0a0")
     canvas.pack(fill="both", expand=True)
@@ -52,7 +53,17 @@ def criar_area_de_trabalho():
         label.image = gif
         label.pack(pady=10)
         pygame.mixer.music.play()
+        filho.protocol("WM_DELETE_WINDOW", lambda: fechar())
+        root.protocol("WM_DELETE_WINDOW", lambda: fechar2())
+        
+        def fechar():
+            pygame.mixer.music.stop()
+            filho.destroy()
+        
+        def fechar2():
+            pygame.mixer.music.stop()
+            filho.destroy()
+            root.destroy()
         
 
     root.mainloop()
-criar_area_de_trabalho()

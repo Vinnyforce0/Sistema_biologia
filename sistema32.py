@@ -74,7 +74,7 @@ canvas.create_text(
 # -----------------------------------------------------
 # CAMPO DE SENHA
 # -----------------------------------------------------
-senha_var = tk.StringVar()
+senha_var = tk.StringVar()                      
 
 senha_entry = ttk.Entry(
     root,
