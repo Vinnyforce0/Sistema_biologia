@@ -99,4 +99,3 @@ def abrir():
     atualizar_relogio()
 
     root.mainloop()
-abrir()
