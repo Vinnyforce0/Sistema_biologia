@@ -111,9 +111,4 @@ botao_box = canvas.create_window(
     height=40
 )
 
-# -----------------------------------------------------
-# FECHAR COM ESC
-# -----------------------------------------------------
-root.bind("<Escape>", lambda e: root.destroy())
-
 root.mainloop()
