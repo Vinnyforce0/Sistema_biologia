@@ -55,8 +55,9 @@ def abrir_desafio_punnett():
             janela.destroy()
             messagebox.showinfo("Resultado", "_ _ 5 _")
         else:
+            janela.destroy()
             messagebox.showerror("Erro",
-                f"❌ Resposta incorreta.\nO correto é: {proporcao_correta}"
+                f"❌ Resposta incorreta."
             )
 
     tk.Button(

@@ -45,10 +45,11 @@ def abrir_pergunta_genetica():
                     return
 
         # Se chegou aqui → incorreta
+        janela.destroy()
         messagebox.showerror(
             "Resultado",
             f"❌ Resposta incorreta.\n"
-            f"A resposta correta é do tipo X:X\n(ex: 1:1, 2:2, 3:3...)"
+            f""
         )
 
 

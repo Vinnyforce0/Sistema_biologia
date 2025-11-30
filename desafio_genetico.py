@@ -46,9 +46,10 @@ def abrir_desafio_genetico():
             janela.destroy()
             messagebox.showinfo("Resultado", "_ 8 _ _")
         else:
+            janela.destroy()
             messagebox.showwarning(
                 "Resultado",
-                f"❌ Incorreto!\nA resposta certa é {desafio['resposta']}%."
+                f"❌ Incorreto!"
             )
 
     # ------------------------------------------------------

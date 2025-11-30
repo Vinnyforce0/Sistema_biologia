@@ -54,10 +54,11 @@ def abrir_desafio_mendel():
             janela.destroy()
             messagebox.showinfo("Resultado", "_ _ _ 9")
         else:
+            janela.destroy()
             messagebox.showerror(
                 "Resultado",
                 "❌ Resposta incorreta.\n"
-                "O cruzamento PP × pp gera 100% Pp → 100% flores roxas."
+                ""
             )
 
     tk.Button(janela, text="Verificar Resposta", font=("Arial", 13), command=verificar).pack(pady=20)
