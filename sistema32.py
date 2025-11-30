@@ -80,7 +80,6 @@ senha_entry = ttk.Entry(
     root,
     textvariable=senha_var,
     font=("Segoe UI", 18),
-    show="*"
 )
 senha_entry.focus()
 
@@ -96,7 +95,7 @@ senha_box = canvas.create_window(
 # FUNÇÃO DE LOGIN
 # -----------------------------------------------------
 def login():
-    if(senha_var.get() == "bobao"):
+    if(senha_var.get() == "Bob2015"):
        abrir_desktop()
 
 # -----------------------------------------------------

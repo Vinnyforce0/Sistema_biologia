@@ -28,9 +28,6 @@ DESAFIOS = [
     }
 ]
 
-# ==========================================================
-# FUNÇÃO PRINCIPAL – ABRE A PÁGINA DO DESAFIO
-# ==========================================================
 def abrir_desafio_genetico():
 
     # ------------------------------------------------------
@@ -89,10 +86,3 @@ def abrir_desafio_genetico():
     botao.pack(pady=10)
 
     janela.mainloop()
-
-
-# ----------------------------------------------------------
-# Executa sozinho (se rodar o arquivo direto)
-# ----------------------------------------------------------
-if __name__ == "__main__":
-    abrir_desafio_genetico()

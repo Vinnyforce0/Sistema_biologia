@@ -3,6 +3,7 @@ import genetica
 import desafio_genetico
 import punnett
 import mendel_desafio
+import folder_infinito
 import time
 
 def abrir():
@@ -42,7 +43,7 @@ def abrir():
         filho.title("Senha_cofre.exe")
         filho.geometry("300x200")
         filho.resizable(False, False)
-        filho.config(bg="white")  # opcional: fundo branco
+        filho.config(bg="white")
         
         label = tk.Label(filho, text="Digite algo e pressione o botao Enter")
         label.pack(pady=5)
@@ -56,21 +57,26 @@ def abrir():
         button = tk.Button(filho, command=pergunta, text="Enter").pack(pady=5)
 
     def pergunta():
-        if(texto.get() == "eu te amo"):
+        if(texto.get().lower() == "ervilhas"):
             filho.destroy()
             genetica.abrir_pergunta_genetica()
-        if(texto.get() == "voce me ama"):
+        if(texto.get().lower() == "progenitor"):
             filho.destroy()
             desafio_genetico.abrir_desafio_genetico()
-        if(texto.get() == "nao amo"):
+        if(texto.get().lower() == "chickenjk"):
             filho.destroy()
             punnett.abrir_desafio_punnett()
-        if(texto.get() == "amo"):
+        if(texto.get().lower() == "schrodinger"):
             filho.destroy()
             mendel_desafio.abrir_desafio_mendel()
         
-    canvas.create_image(70, 190, image=trash)
-    canvas.create_text(70, 240, text="Lixeira", fill="white", font=("Segoe UI", 12))
+    lixoapp = canvas.create_image(70, 190, image=trash)
+    canvas.tag_bind(lixoapp, "<Button-1>", lambda e: abrir_lixo())
+    lixotext = canvas.create_text(70, 240, text="Lixeira", fill="white", font=("Segoe UI", 12))
+    canvas.tag_bind(lixotext, "<Button-1>", lambda e: abrir_lixo())
+    
+    def abrir_lixo():
+        folder_infinito.criar_area_de_trabalho()
 
     # -----------------------------------------------------
     # BARRA DE TAREFAS
@@ -93,3 +99,4 @@ def abrir():
     atualizar_relogio()
 
     root.mainloop()
+abrir()
