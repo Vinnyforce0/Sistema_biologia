@@ -24,7 +24,7 @@ def criar_area_de_trabalho():
     root.resizable(False, False)
     
 
-    canvas = tk.Canvas(root, width=900, height=525, highlightthickness=0, bg="#a0a0a0")
+    canvas = tk.Canvas(root, width=900, height=525, highlightthickness=0, bg="#ffffff")
     canvas.pack(fill="both", expand=True)
 
     # --------------------- ÍCONES --------------------- #
@@ -33,7 +33,7 @@ def criar_area_de_trabalho():
     # Criando o ícone de folder clicável
     exeapp = canvas.create_image(70, 80, image=folder_icon)
     canvas.tag_bind(exeapp, "<Button-1>", lambda e: abrir_filho())
-    exetext = canvas.create_text(70, 130, text="Click_me.mp4", fill="white", font=("Segoe UI", 12))
+    exetext = canvas.create_text(70, 130, text="Click_me.mp4", fill="black", font=("Segoe UI", 12))
     canvas.tag_bind(exetext, "<Button-1>", lambda e: abrir_filho())
 
     # --------------------- FUNÇÃO PARA ABRIR FOLDER --------------------- #

@@ -44,7 +44,7 @@ def abrir():
         filho.geometry("300x200")
         filho.resizable(False, False)
         filho.config(bg="white")
-        
+        global label
         label = tk.Label(filho, text="Digite algo e pressione o botao Enter")
         label.pack(pady=5)
 
@@ -69,6 +69,8 @@ def abrir():
         if(texto.get().lower() == "schrodinger"):
             filho.destroy()
             mendel_desafio.abrir_desafio_mendel()
+        if(texto.get().lower() == "algo"):
+           label.config(text="engraçadinho, muito funny")
         
     lixoapp = canvas.create_image(70, 190, image=trash)
     canvas.tag_bind(lixoapp, "<Button-1>", lambda e: abrir_lixo())
